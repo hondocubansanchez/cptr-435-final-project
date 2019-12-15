@@ -67,7 +67,7 @@ PAGE="""\
 def take_photo():
     global i
     i = i + 1
-    camera.capture('/home/pi/Desktop/Pictures/image_%s.jpg' % i)
+    camera.capture('/home/pi/Desktop/cptr-435-final-project/Pictures/image_%s.jpg' % i)
     print('A photo has been taken')
     sleep(10)
     
@@ -140,7 +140,7 @@ with picamera.PiCamera(resolution='640x480', framerate=24) as camera:
     camera.rotation = 180
     camera.start_recording(output, format='mjpeg')
     try:
-        address = ('192.168.0.105', 8000)
+        address = ('192.168.0.103', 8000)
         server = StreamingServer(address, StreamingHandler)
         server.serve_forever()
     finally:
